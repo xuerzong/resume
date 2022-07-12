@@ -12,4 +12,11 @@ const base = new Base(_base)
 const baseRender = base.render()
 
 indexHtml = indexHtml.replace('<body>', `<body>${baseRender}`)
-fs.writeFileSync(path.resolve(ROOT_DIR, './build/index.html'), indexHtml, 'utf-8')
+
+const outputDir = path.resolve(ROOT_DIR, './dist')
+
+if(!fs.existsSync(outputDir)) {
+  fs.mkdirSync(outputDir)
+}
+
+fs.writeFileSync(path.resolve(outputDir, 'index.html'), indexHtml, 'utf-8')

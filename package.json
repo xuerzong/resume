@@ -6,13 +6,22 @@
   "author": "xucong <xuerzong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:html": "node scripts/build-html.js && gulp html-minify"
+    "build:html": "node scripts/build-html.js && gulp html-minify",
+    "build:css": "gulp css"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
+    "autoprefixer": "^10.4.7",
+    "cssnano": "^5.1.12",
     "gulp": "^4.0.2",
-    "gulp-htmlmin": "^5.0.1"
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-sass": "^5.1.0",
+    "sass": "^1.53.0"
+  },
+  "resolutions": {
+    "postcss": "^8.2.15"
   }
 }
