@@ -6,19 +6,26 @@
   "author": "xucong <xuerzong@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build:html": "node scripts/build-html.js && gulp html-minify",
-    "build:css": "gulp css"
+    "dev": "cross-env NODE_ENV=development OUTPUT_PATH=./.resume gulp",
+    "start": "node server.js",
+    "build": "cross-env NODE_ENV=production gulp build",
+    "clean": "rimraf ./node_modules/.cache ./dist ./.resume",
+    "prebuild": "yarn clean && echo All clean ✨"
   },
   "dependencies": {
     "js-yaml": "^4.1.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.4.7",
+    "browser-sync": "^2.27.10",
+    "cross-env": "^7.0.3",
     "cssnano": "^5.1.12",
     "gulp": "^4.0.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-postcss": "^9.0.1",
     "gulp-sass": "^5.1.0",
+    "nodemon": "^2.0.19",
+    "rimraf": "^3.0.2",
     "sass": "^1.53.0"
   },
   "resolutions": {
