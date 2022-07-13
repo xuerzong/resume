@@ -26,7 +26,7 @@ gulp.task('css', () => {
   if(!isDev) {
     postcssPlugins.push(cssnano())
   }
-  return gulp.src('./styles/**/*.scss')
+  return gulp.src('./styles/index.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(postcssPlugins))
   .pipe(gulp.dest(`${OUTPUT_PATH}/styles`))

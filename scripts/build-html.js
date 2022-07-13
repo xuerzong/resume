@@ -12,7 +12,7 @@ const buildHtml = () => {
   
   const baseRender = base.render()
   
-  indexHtml = indexHtml.replace('<body>', `<body>${baseRender}`)
+  indexHtml = indexHtml.replace('<main id="resume">', `<main id="resume">${baseRender}`)
   
   const outputDir = path.resolve(ROOT_DIR, OUTPUT_PATH)
   

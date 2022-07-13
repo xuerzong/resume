@@ -13,12 +13,12 @@ const loadConfigYaml = () => {
  * @returns 
  */
 const loadIndexTemplate = () => {
-  return fs.readFileSync(path.resolve(ROOT_DIR, 'index.html'), 'utf-8')
+  return loadHtmlTemplate('index')
 }
 
 /**
  * Get html template of type
- * @param {'base'} type 
+ * @param {'index' | 'base'} type 
  * @returns html template content
  */
 const loadHtmlTemplate = (type) => {

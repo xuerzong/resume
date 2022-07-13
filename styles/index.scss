@@ -1,4 +1,4 @@
-$primary-color: purple;
+@import './variables.scss';
 
 * {
   margin: 0;
@@ -7,5 +7,60 @@ $primary-color: purple;
 }
 
 html, body {
-  background-color: $primary-color;
+  font-size: $font-size;
+  background-color: #fff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+a {
+  color: $text-color;
+  transition: color .3s ease-in-out;
+  text-decoration: none;
+  &:hover {
+    color: $primary-color;
+  }
+}
+
+
+#resume {
+  max-width: $resume-width;
+  margin: 0 auto;
+  padding: 1.25rem;
+  color: $text-color;
+}
+
+.base {
+  text-align: center;
+  &-name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: .5rem;
+  }
+
+  &-social {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Recursive, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    &-item {
+      display: inline-flex;
+      align-items: center;
+      .social-icon {
+        margin-right: .25em;
+      }
+    }
+    li {
+      list-style: none;
+      margin-right: 1.5rem;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.social-icon {
+  display: inline-block;
+  width: 1.25em;
+  height: 1.25em;
 }
