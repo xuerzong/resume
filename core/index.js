@@ -24,7 +24,7 @@ class App {
   render() {
     let tmp = loadHtmlTemplate(this.name.toLowerCase())
     for(const key in this.options) {
-      tmp = tmp.replace(this.getKeyPrefix(key), this.options[key])
+      tmp = tmp.replaceAll(this.getKeyPrefix(key), this.options[key])
     }
     return tmp
   }

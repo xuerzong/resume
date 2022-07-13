@@ -4,20 +4,21 @@ const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
 const browserSync = require('browser-sync').create();
-const buildHtml = require('./scripts/build-html')
+const { OUTPUT_PATH } = require('./constants/path')
 
 const htmlmin = require('gulp-htmlmin')
 const isDev = process.env.NODE_ENV === 'development'
 
 const devPort = parseInt(process.env.PORT || 3000, 10)
-const outputPath = process.env.OUTPUT_PATH || './dist'
 
 gulp.task('html', () => {
-  buildHtml()
-  return gulp.src('./dist/index.html')
+  require('./scripts/build-html')()
+  return gulp.src(`${OUTPUT_PATH}/index.html`)
     .pipe(htmlmin({ collapseWhitespace: true }))
-    .pipe(gulp.dest(outputPath))
-    .pipe(browserSync.stream())
+    .pipe(gulp.dest(OUTPUT_PATH))
+    .pipe(browserSync.reload({
+      stream: true
+    }))
 })
 
 gulp.task('css', () => {
@@ -28,13 +29,13 @@ gulp.task('css', () => {
   return gulp.src('./styles/**/*.scss')
   .pipe(sass().on('error', sass.logError))
   .pipe(postcss(postcssPlugins))
-  .pipe(gulp.dest(`${outputPath}/styles`))
+  .pipe(gulp.dest(`${OUTPUT_PATH}/styles`))
   .pipe(browserSync.stream())
 })
 
 gulp.task('watch', () => {
   browserSync.init({
-    server: `${outputPath}`,
+    server: `${OUTPUT_PATH}`,
     port: devPort,
     ui: false
   })
