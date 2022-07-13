@@ -1,5 +1,4 @@
-const { loadHtmlTemplate } = require('../utils/file')
-const { TEMPLATE_DIR } = require('../constants/path')
+const App = require('.')
 
 const defaultOptions = {
   name: 'name',
@@ -9,26 +8,9 @@ const defaultOptions = {
 }
 
 
-class Base {
-  prefix = 'BASE.OPTIONS'
-
+class Base extends App {
   constructor(options) {
-    this.options = {  ...defaultOptions, ...options }
-  }
-
-  /**
-   * 
-   * @param {string} key 
-   * @returns base's prefix of key
-   */
-  _getPrefix(key) {
-    return `${this.prefix}.${key}`
-  }
-
-  render() {
-    let template = loadHtmlTemplate('base')
-    template = template.replace(this._getPrefix('name'), this.options.name)
-    return template
+    super('Base', {...defaultOptions, ...options})
   }
 }
 
