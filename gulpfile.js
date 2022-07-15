@@ -11,7 +11,7 @@ const isDev = process.env.NODE_ENV === 'development'
 
 const devPort = parseInt(process.env.PORT || 3000, 10)
 
-gulp.task('html', () => {
+gulp.task('html', async () => {
   require('./scripts/build-html')()
   return gulp.src(`${OUTPUT_PATH}/index.html`)
     .pipe(htmlmin({ collapseWhitespace: true }))
@@ -33,6 +33,10 @@ gulp.task('css', () => {
   .pipe(browserSync.stream())
 })
 
+gulp.task('pdf', async () => {
+  await require('./scripts/build-pdf')()
+})
+
 gulp.task('watch', () => {
   browserSync.init({
     server: `${OUTPUT_PATH}`,
@@ -50,6 +54,6 @@ gulp.task('watch', () => {
   gulp.watch('./styles/**/*.scss', gulp.series('css'))
 })
 
-gulp.task('build', gulp.series('html', 'css'))
+gulp.task('build', gulp.series('css', 'html', 'pdf'))
 
 gulp.task('default', gulp.series('html', 'css', 'watch'))

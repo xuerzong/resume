@@ -26,6 +26,8 @@ const buildHtml = () => {
   }
 
   fs.writeFileSync(path.resolve(outputDir, 'index.html'), indexHtml, 'utf-8')
+
+  return indexHtml
 }
 
 module.exports = buildHtml
