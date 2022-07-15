@@ -10,7 +10,8 @@ const contentTypes = {
   js: 'text/javascript',
   json: 'application/json',
   png: 'image/png',
-  jpg: 'image/jpg'
+  jpg: 'image/jpg',
+  pdf: 'application/pdf'
 }
 
 http.createServer(async (req, res) => {

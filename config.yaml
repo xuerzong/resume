@@ -4,5 +4,6 @@ base:
   phone: 18500950299
   github: xuerzong
   website: xuerzong.com
-
-
+pdf:
+  label: PDF版
+  url: /resume.pdf

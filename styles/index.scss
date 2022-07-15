@@ -64,3 +64,42 @@ a {
   width: 1.25em;
   height: 1.25em;
 }
+
+
+.pdf {
+  &-view {
+    position: fixed;
+    right: 0;
+    top: 0;
+    display: none;
+    align-items: center;
+    font-size: 1.5em;
+    padding: .25em;
+    color: $text-color;
+    background-color: #eee;
+    cursor: pointer;
+  }
+
+  &-icon {
+    width: 1.25em;
+    height: 1.25em;
+    color: #dc2626;
+    margin-right: .25em;
+  }
+}
+
+@media print {
+  .pdf {
+    &-view {
+      display: none;
+    }
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .pdf {
+    &-view {
+      display: inline-flex;
+    }
+  }
+}
