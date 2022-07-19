@@ -1,9 +1,9 @@
 const gulp = require('gulp')
-const sass = require('gulp-sass')(require('sass'));
+const sass = require('gulp-sass')(require('sass'))
 const postcss = require('gulp-postcss')
 const autoprefixer = require('autoprefixer')
 const cssnano = require('cssnano')
-const browserSync = require('browser-sync').create();
+const browserSync = require('browser-sync').create()
 const { OUTPUT_PATH } = require('./constants/path')
 
 const htmlmin = require('gulp-htmlmin')
@@ -44,12 +44,8 @@ gulp.task('watch', () => {
     ui: false
   })
   gulp.watch([
-    './index.html',
-    './constants/**/*.js',
-    './core/**/*.js',
+    './index.hbs',
     './scripts/build-html.js',
-    './templates/**/*.html',
-    './utils/**/*.js'
   ], gulp.series('html'))
   gulp.watch('./styles/**/*.scss', gulp.series('css'))
 })
