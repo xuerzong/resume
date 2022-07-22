@@ -1,9 +1,33 @@
 base:
-  name: demo
+  name: 徐聪
   email: xuerzong@gmail.com
   phone: 18500950299
   github: xuerzong
-  website: xuerzong.com
+  website: https://xuerzong.com
+
+work-experience:
+  - company-name: 网易有道信息技术(北京)有限公司
+    start-time: 2021-04-06
+  # - end-time: 至今
+    club: 国际广告产品部
+    position: 高级前端开发工程师
+    location: 北京
+    content: 负责有道广告全球KOL营销平台（https://youdaoads.com）建设。
+    highlights:
+      - 单独架构官网项目（Next.js + Typescript + Scss）；
+      - 负责YoudaoAds全球数字营销Sass平台开发（Next.js + Typescript + Ant Design + Less）。
+
+  - company-name: 北京爱奇艺科技有限公司
+    start-time: 2020-11-11
+    end-time: 2021-04-06
+    club: 基线研发部
+    position: H5前端实习生
+    location: 北京
+    # content: 总结
+    highlights:
+      - 参与 低代码活动页面搭建平台 组件开发，技术栈（Ant Design + React.js + Typescript）
+      - 参与影视活动页面开发
+
 pdf:
-  label: PDF版
+  label: PDF
   url: /resume.pdf

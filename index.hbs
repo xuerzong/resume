@@ -19,7 +19,7 @@
 
 <body>
   <main id="resume">
-    <section class="base" aria-label="base-info">
+    <section class="base section" aria-label="base-info">
       <h1 class="base-name">
         {{base.name}}
       </h1>
@@ -93,6 +93,45 @@
           </span>
         </li>
         {{/if}}
+      </ul>
+    </section>
+
+    <section class="work-exp section">
+      <h2 class="section-title">工作经历</h2>
+
+      <ul class="work-exp-container">
+        {{#each work-experience}}
+          <li class="work-exp-wrapper">
+            <span class="work-exp-timeline">
+              <time>
+                {{formatTime end-time}}
+              </time>
+              <time>
+                {{formatTime start-time}}
+              </time>
+            </span>
+            <div class="work-exp-content">
+              <h3 class="work-exp-company">{{company-name}}</h3>
+              <div class="work-exp-position">
+                <span>{{position}}</span>                  
+                <span>{{club}}</span>
+              </div>
+  
+              {{#if content}}
+                <p class="work-exp-summary">
+                  {{content}}
+                </p>
+              {{/if}}
+              {{#if highlights}}
+                <ul class="work-exp-highlights">
+                  {{#each highlights}}
+                    <li title="{{.}}" > {{.}} </li>
+                  {{/each}}
+                </ul>
+              {{/if}}
+            </div>
+          </li>
+        {{/each}}
       </ul>
     </section>
   </main>

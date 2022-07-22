@@ -46,6 +46,7 @@ gulp.task('watch', () => {
   gulp.watch([
     './index.hbs',
     './scripts/build-html.js',
+    './config.yaml'
   ], gulp.series('html'))
   gulp.watch('./styles/**/*.scss', gulp.series('css'))
 })

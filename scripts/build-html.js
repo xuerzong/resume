@@ -3,6 +3,7 @@ const path = require('path')
 const yaml = require('js-yaml')
 const Handlebars = require('handlebars')
 const { ROOT_DIR, OUTPUT_PATH } = require('../constants/path')
+const moment = require('moment')
 
 const loadConfigYaml = () => {
   const yamlStr = fs.readFileSync(path.resolve(ROOT_DIR, 'config.yaml'), 'utf-8')
@@ -24,6 +25,12 @@ const buildHtml = () => {
   }
 
   const template = loadHBSTemplate()
+
+  // config handlebars
+  Handlebars.registerHelper('formatTime',  function(time) {
+    return time ? moment(time).format('YYYY.MM') : '至今'
+  })
+  
   const html = Handlebars.compile(template)(resumeConfig)
 
   fs.writeFileSync(path.resolve(outputDir, 'index.html'), html, 'utf-8')
