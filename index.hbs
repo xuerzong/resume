@@ -96,13 +96,42 @@
       </ul>
     </section>
 
-    <section class="work-exp section">
+    {{#if education-experience}}
+      <section class="edu-exp section">
+        <h2 class="section-title">教育经历</h2>
+  
+        <ul class="exp-container">
+          {{#each education-experience}}
+            <li class="exp-wrapper">
+              <span class="exp-timeline">
+                <time>
+                  {{formatTime end-time}}
+                </time>
+                <time>
+                  {{formatTime start-time}}
+                </time>
+              </span>
+              <div class="exp-content">
+                <h3 class="exp-title">{{name}}</h3>
+                <div class="exp-subtitle">
+                  <span>{{school}}</span>                  
+                  <span>{{major}}</span>
+                  <span>{{other}}</span>
+                </div>
+              </div>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
+    <section class="exp section">
       <h2 class="section-title">工作经历</h2>
 
-      <ul class="work-exp-container">
+      <ul class="exp-container">
         {{#each work-experience}}
-          <li class="work-exp-wrapper">
-            <span class="work-exp-timeline">
+          <li class="exp-wrapper">
+            <span class="exp-timeline">
               <time>
                 {{formatTime end-time}}
               </time>
@@ -110,20 +139,20 @@
                 {{formatTime start-time}}
               </time>
             </span>
-            <div class="work-exp-content">
-              <h3 class="work-exp-company">{{company-name}}</h3>
-              <div class="work-exp-position">
+            <div class="exp-content">
+              <h3 class="exp-title">{{company-name}}</h3>
+              <div class="exp-subtitle">
                 <span>{{position}}</span>                  
                 <span>{{club}}</span>
               </div>
   
               {{#if content}}
-                <p class="work-exp-summary">
-                  {{content}}
+                <p class="exp-summary">
+                  {{summary}}
                 </p>
               {{/if}}
               {{#if highlights}}
-                <ul class="work-exp-highlights">
+                <ul class="exp-highlights">
                   {{#each highlights}}
                     <li title="{{.}}" > {{.}} </li>
                   {{/each}}

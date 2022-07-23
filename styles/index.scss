@@ -63,12 +63,12 @@ a {
   height: 1.25em;
 }
 
-.work-exp {
+.exp {
   &-wrapper {
     display: flex;
     list-style: none;
     &:last-child {
-      .work-exp-timeline {
+      .exp-timeline {
         &::after {
           display: none;
         }
@@ -83,6 +83,7 @@ a {
     align-items: center;
     flex-direction: column;
     opacity: .6;
+
     &::after {
       content: '';
       position: absolute;
@@ -100,11 +101,11 @@ a {
     margin-left: 2rem;
   }
 
-  &-company {
+  &-title {
     margin-bottom: .25em;
   }  
 
-  &-position {
+  &-subtitle {
     font-size: .875em;
     opacity: 0.6;
     margin-bottom: .75rem;
