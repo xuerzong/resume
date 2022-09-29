@@ -4,6 +4,7 @@ const yaml = require('js-yaml')
 const Handlebars = require('handlebars')
 const { ROOT_DIR, OUTPUT_PATH } = require('../constants/path')
 const moment = require('moment')
+const registerIcons = require('../components/icons')
 
 const loadConfigYaml = () => {
   const yamlStr = fs.readFileSync(path.resolve(ROOT_DIR, 'config.yaml'), 'utf-8')
@@ -30,6 +31,7 @@ const buildHtml = () => {
   Handlebars.registerHelper('formatTime',  function(time) {
     return time ? moment(time).format('YYYY.MM') : '至今'
   })
+  registerIcons(Handlebars)
   
   const html = Handlebars.compile(template)(resumeConfig)
 

@@ -22,8 +22,8 @@ work-experience:
     location: 北京
     summary: 负责有道广告全球KOL营销平台（https://youdaoads.com）建设。
     highlights:
-      - 单独架构官网项目（Next.js + Typescript + Scss）；
-      - 负责YoudaoAds全球数字营销Sass平台开发（Next.js + Typescript + Ant Design + Less）。
+      - 负责YoudaoAds官网项目（Next.js + Typescript + Scss）；
+      - 负责YoudaoAds全球数字营销Saas平台开发（Next.js + Typescript + Ant Design + Less）。
 
   - company-name: 北京爱奇艺科技有限公司
     start-time: 2020-11-11
@@ -33,9 +33,9 @@ work-experience:
     location: 北京
     # content: 总结
     highlights:
-      - 参与 低代码活动页面搭建平台 组件开发，技术栈（Ant Design + React.js + Typescript）
-      - 参与影视活动页面开发
+      - 参与低代码平台开发，技术栈（Ant Design + React.js + Typescript）
+      - 参与影视活动H5页面开发（Vue2 + Vanilla）
 
 pdf:
-  label: PDF
+  label: 浏览pdf版
   url: /resume.pdf

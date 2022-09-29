@@ -14,12 +14,12 @@
     <style>{{css}}</style>
   {{/if}}
   <title>Resume | xuerzong</title>
-  <meta name="description" content="xuerzong's resume">
+  <meta name="description" content="{{base.name}}的简历">
 </head>
 
 <body>
   <main id="resume">
-    <section class="base section" aria-label="base-info">
+    <section class="base container" aria-label="base-info">
       <h1 class="base-name">
         {{base.name}}
       </h1>
@@ -29,19 +29,7 @@
         <li title="{{base.phone}}">
           <span class="base-social-item">
             <span class="social-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"
-                />
-              </svg>
+              {{> phoneIcon}}
             </span>
             <span>{{base.phone}}</span>
           </span>
@@ -52,21 +40,9 @@
         <li title="{{base.email}}">
           <span class="base-social-item">
             <span class="social-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
-                />
-              </svg>
+              {{> mailIcon}}
             </span>
-            <span>{{base.email}}</span>
+            <a href="mailto:{{base.email}}">{{base.email}}</a>
           </span>
         </li>
         {{/if}}
@@ -75,21 +51,9 @@
         <li title="{{base.website}}">
           <span class="base-social-item">
             <span class="social-icon">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                stroke-width="2"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  d="M3.055 11H5a2 2 0 012 2v1a2 2 0 002 2 2 2 0 012 2v2.945M8 3.935V5.5A2.5 2.5 0 0010.5 8h.5a2 2 0 012 2 2 2 0 104 0 2 2 0 012-2h1.064M15 20.488V18a2 2 0 012-2h3.064M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-                />
-              </svg>
+              {{> websiteIcon}}
             </span>
-            <span>{{base.website}}</span>
+            <a href="{{base.website}}" target="_blank">{{base.website}}</a>
           </span>
         </li>
         {{/if}}
@@ -97,27 +61,26 @@
     </section>
 
     {{#if education-experience}}
-      <section class="edu-exp section">
-        <h2 class="section-title">教育经历</h2>
-  
-        <ul class="exp-container">
+      <section class="container">
+        <h2 class="title">教育经历</h2>
+        <ul class="wrapper education">
           {{#each education-experience}}
-            <li class="exp-wrapper">
-              <span class="exp-timeline">
+            <li title="{{name}}" class="education__wrapper">
+              <div>
+                <strong class="education__name">{{name}}</strong>
+                <span class="education__caption">
+                  <span>{{major}}</span>
+                  <span>{{other}}</span>
+                </span>
+              </div>
+              <div>
                 <time>
                   {{formatTime end-time}}
                 </time>
+                -
                 <time>
                   {{formatTime start-time}}
                 </time>
-              </span>
-              <div class="exp-content">
-                <h3 class="exp-title">{{name}}</h3>
-                <div class="exp-subtitle">
-                  <span>{{school}}</span>                  
-                  <span>{{major}}</span>
-                  <span>{{other}}</span>
-                </div>
               </div>
             </li>
           {{/each}}
@@ -125,40 +88,41 @@
       </section>
     {{/if}}
 
-    <section class="exp section">
-      <h2 class="section-title">工作经历</h2>
+    <section class="container">
+      <h2 class="title">工作经历</h2>
 
-      <ul class="exp-container">
+      <ul class="wrapper work">
         {{#each work-experience}}
-          <li class="exp-wrapper">
-            <span class="exp-timeline">
-              <time>
-                {{formatTime end-time}}
-              </time>
+          <li class="work__wrapper">
+            <h3 class="work__title">{{company-name}}</h3>
+
+            <div>
               <time>
                 {{formatTime start-time}}
               </time>
-            </span>
-            <div class="exp-content">
-              <h3 class="exp-title">{{company-name}}</h3>
-              <div class="exp-subtitle">
-                <span>{{position}}</span>                  
-                <span>{{club}}</span>
-              </div>
-  
-              {{#if content}}
-                <p class="exp-summary">
-                  {{summary}}
-                </p>
-              {{/if}}
-              {{#if highlights}}
-                <ul class="exp-highlights">
-                  {{#each highlights}}
-                    <li title="{{.}}" > {{.}} </li>
-                  {{/each}}
-                </ul>
-              {{/if}}
+              -
+              <time>
+                {{formatTime end-time}}
+              </time>
             </div>
+
+            <div class="work__subtitle">
+              <span>{{position}}</span>                  
+              <span>{{club}}</span>
+            </div>
+  
+            {{#if content}}
+              <p class="work__summary">
+                {{summary}}
+              </p>
+            {{/if}}
+            {{#if highlights}}
+              <ul class="work__highlights">
+                {{#each highlights}}
+                  <li title="{{.}}" > {{.}} </li>
+                {{/each}}
+              </ul>
+            {{/if}}
           </li>
         {{/each}}
       </ul>
@@ -166,21 +130,8 @@
   </main>
 
   {{#if pdf}}
-  <a target="_blank" href="{{pdf.url}}" class="pdf-view">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      class="pdf-icon"
-      fill="none"
-      viewBox="0 0 24 24"
-      stroke="currentColor"
-      stroke-width="2"
-    >
-      <path
-        stroke-linecap="round"
-        stroke-linejoin="round"
-        d="M7 21h10a2 2 0 002-2V9.414a1 1 0 00-.293-.707l-5.414-5.414A1 1 0 0012.586 3H7a2 2 0 00-2 2v14a2 2 0 002 2z"
-      />
-    </svg>
+  <a target="_blank" href="{{pdf.url}}" class="pdf">
+    <span class="pdf-icon">{{> pdfIcon}}</span>
     {{pdf.label}}
   </a>
   {{/if}}
