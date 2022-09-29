@@ -75,11 +75,11 @@
               </div>
               <div>
                 <time>
-                  {{formatTime end-time}}
+                  {{formatTime start-time}}
                 </time>
                 -
                 <time>
-                  {{formatTime start-time}}
+                  {{formatTime end-time}}
                 </time>
               </div>
             </li>
@@ -111,7 +111,7 @@
               <span>{{club}}</span>
             </div>
   
-            {{#if content}}
+            {{#if summary}}
               <p class="work__summary">
                 {{summary}}
               </p>
