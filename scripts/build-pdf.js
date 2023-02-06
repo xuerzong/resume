@@ -5,7 +5,7 @@ const { DIST_DIR } = require('../constants/path')
 
 const pdfFileName = 'resume.pdf'
 
-const generatePDF = async (html) => {
+const buildPDF = async (html) => {
   const browser = await puppeteer.launch({ headless: true })
   const page = await browser.newPage()
 
@@ -32,15 +32,6 @@ const generatePDF = async (html) => {
   fs.writeFileSync(path.resolve(DIST_DIR, pdfFileName), pdf)
 
   return pdf
-}
-
-const buildPDF = async () => {
-  const css = fs.readFileSync(path.resolve(DIST_DIR, 'styles/index.css'), 'utf-8')
-  const html = fs.readFileSync(path.resolve(DIST_DIR, 'index.html'), 'utf-8').replace(
-    `<link rel="stylesheet" href="./styles/index.css">`,
-    `<style>${css}</style>`
-  )
-  await generatePDF(html)
 }
 
 module.exports = buildPDF

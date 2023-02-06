@@ -6,26 +6,30 @@ const { ROOT_DIR, OUTPUT_PATH } = require('../constants/path')
 const moment = require('moment')
 const registerIcons = require('../components/icons')
 
-const loadConfigYaml = () => {
-  const yamlStr = fs.readFileSync(path.resolve(ROOT_DIR, 'config.yaml'), 'utf-8')
-  return yaml.load(yamlStr)
+const loadFile = (path) => {
+  if(!fs.existsSync(path)) {
+    throw new Error(`There is not a file be called path:${path}`)
+  }
+  return fs.readFileSync(path, 'utf-8')
 }
 
-const loadHBSTemplate = () => {
-  const hbs = fs.readFileSync(path.resolve(ROOT_DIR, 'index.hbs'), 'utf-8')
-  return hbs
+const loadHBSTemplate = () => loadFile(path.resolve(ROOT_DIR, 'index.hbs'))
+const loadConfigYaml = () => {
+  const config = loadFile(path.resolve(ROOT_DIR, 'config.yaml'))
+  return yaml.load(config)
 }
+const loadCss = () => loadFile(path.resolve(OUTPUT_PATH, 'styles/index.css'))
 
 const buildHtml = () => {
-  const resumeConfig = loadConfigYaml()
-
   const outputDir = path.resolve(ROOT_DIR, OUTPUT_PATH)
 
   if (!fs.existsSync(outputDir)) {
     fs.mkdirSync(outputDir)
   }
 
+  const resumeConfig = loadConfigYaml()
   const template = loadHBSTemplate()
+  const css = loadCss()
 
   // config handlebars
   Handlebars.registerHelper('formatTime',  function(time) {
@@ -36,9 +40,7 @@ const buildHtml = () => {
   })
   registerIcons(Handlebars)
   
-  const html = Handlebars.compile(template)(resumeConfig)
-
-  fs.writeFileSync(path.resolve(outputDir, 'index.html'), html, 'utf-8')
+  const html = Handlebars.compile(template)({ ...resumeConfig, css })
 
   return html
 }
