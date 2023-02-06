@@ -42,6 +42,8 @@ const buildHtml = () => {
   
   const html = Handlebars.compile(template)({ ...resumeConfig, css })
 
+  fs.writeFileSync(path.resolve(outputDir, 'index.html'), html, 'utf-8')
+
   return html
 }
 
