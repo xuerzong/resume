@@ -31,6 +31,9 @@ const buildHtml = () => {
   Handlebars.registerHelper('formatTime',  function(time) {
     return time ? moment(time).format('YYYY.MM') : '至今'
   })
+  Handlebars.registerHelper('formatDate',  function(time) {
+    return moment(time).format('YYYY.MM.DD')
+  })
   registerIcons(Handlebars)
   
   const html = Handlebars.compile(template)(resumeConfig)
