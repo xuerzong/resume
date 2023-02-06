@@ -5,6 +5,8 @@ base:
   github: xuerzong
   website: https://xuerzong.com
 
+introduction: 我是一名计算机专业本科毕业生、前端工程师，热衷于用代码构建创意，用应用丰富生活。
+
 education-experience:
   - name: 北京交通大学
     school: 计算机与信息技术学院
@@ -20,7 +22,7 @@ work-experience:
     club: 国际广告产品部
     position: 高级前端开发工程师
     location: 北京
-    summary: 负责有道广告全球数字营销Saas平台（https://youdaoads.com）开发、维护及周边建设
+    summary: 负责有道广告全球数字营销Saas平台（https://youdaoads.com）开发、维护及周边建设；
     highlights:
       - YoudaoAds官网（Next.js + Typescript + Scss）
       - YoudaoAds全球数字营销Saas平台（Next.js + Typescript + Ant Design + Less）
@@ -35,6 +37,9 @@ work-experience:
       - 参与低代码平台开发，技术栈（Ant Design + React.js + Typescript）
       - 参与影视活动H5页面开发（Vue2 + Vanilla）
 
-pdf:
-  label: 浏览pdf版
-  url: /resume.pdf
+professional-skills:
+  - 前端：Typescript、Javascript、React、Next、Vue
+  - 构建：Webpack、Gulp、Rollup、Vite
+  - 后端：Nodejs、Python、Mysql、MongoDB、Prisma、Typeorm
+
+updated_at: 2023-02-02

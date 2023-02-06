@@ -1,6 +1,7 @@
 const http = require('http')
 const path = require('path')
 const fs = require('fs')
+const buildHtml = require('./scripts/build-html')
 const { OUTPUT_PATH } = require('./constants/path')
 
 const PORT = parseInt(process.env.PORT || 8888, 10)
@@ -16,7 +17,12 @@ const contentTypes = {
 
 http.createServer(async (req, res) => {
   const pathname = req.url
-  const filePath = path.join(__dirname, OUTPUT_PATH, (pathname === '/' ? 'index.html' : pathname))
+
+  if(pathname === '/') {
+    return res.end(buildHtml())
+  }
+
+  const filePath = path.join(__dirname, OUTPUT_PATH, pathname)
 
   if(!fs.existsSync(filePath)) {
     res.writeHead(404, {"Content-Type": "text/plain"})

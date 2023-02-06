@@ -1,0 +1,5 @@
+{
+  "watch": ["index.hbs", "styles"],
+  "exec": "yarn build-css && yarn start",
+  "ext": "scss hbs"
+}

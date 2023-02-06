@@ -7,73 +7,66 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="*">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Recursive:wght,CASL,MONO@300..700,0.1,0.5&display=swap">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap">
-  <link rel="stylesheet" href="./styles/index.css">
-  {{#if css}}
-    <style>{{css}}</style>
-  {{/if}}
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap">
+  <style>{{css}}</style>
   <title>Resume | xuerzong</title>
   <meta name="description" content="{{base.name}}的简历">
 </head>
 
 <body>
   <main id="resume">
-    <section class="base container" aria-label="base-info">
-      <h1 class="base-name">
+    <section class="base container">
+      <h1 class="base__name">
         {{base.name}}
       </h1>
 
-      <ul class="base-social">
+      <ul class="base__social">
         {{#if base.phone}}
-        <li title="{{base.phone}}">
-          <span class="base-social-item">
-            <span class="social-icon">
-              {{> phoneIcon}}
-            </span>
-            <span>{{base.phone}}</span>
+        <li title="{{base.phone}}" class="base__social-wrapper">
+          <span class="base__social-icon icon">
+            {{> phoneIcon}}
           </span>
+          <span>{{base.phone}}</span>
         </li>
         {{/if}}
 
         {{#if base.email}}
-        <li title="{{base.email}}">
-          <span class="base-social-item">
-            <span class="social-icon">
-              {{> mailIcon}}
-            </span>
-            <a href="mailto:{{base.email}}">{{base.email}}</a>
+        <li title="{{base.email}}" class="base__social-wrapper">
+          <span class="base__social-icon icon">
+            {{> mailIcon}}
           </span>
+          <a href="mailto:{{base.email}}">{{base.email}}</a>
         </li>
         {{/if}}
 
         {{#if base.website}}
-        <li title="{{base.website}}">
-          <span class="base-social-item">
-            <span class="social-icon">
-              {{> websiteIcon}}
-            </span>
-            <a href="{{base.website}}" target="_blank">{{base.website}}</a>
+        <li title="{{base.website}}" class="base__social-wrapper">
+          <span class="base__social-icon icon">
+            {{> websiteIcon}}
           </span>
+          <a href="{{base.website}}" target="_blank">{{base.website}}</a>
         </li>
         {{/if}}
       </ul>
     </section>
 
-    {{#if education-experience}}
-      <section class="container">
-        <h2 class="title">教育经历</h2>
-        <ul class="wrapper education">
-          {{#each education-experience}}
-            <li title="{{name}}" class="education__wrapper">
-              <div>
-                <strong class="education__name">{{name}}</strong>
-                <span class="education__caption">
-                  <span>{{major}}</span>
-                  <span>{{other}}</span>
-                </span>
-              </div>
+    <section class="container">
+      <h2 class="title">自我介绍</h2>
+
+      <p>{{introduction}}</p>
+    </section>
+
+    <section class="container">
+      <h2 class="title">工作经历</h2>
+
+      <ul class="wrapper work">
+        {{#each work-experience}}
+          <li class="work__wrapper">
+            <div class="info__wrapper">
+              <h3 class="info__title">
+                {{company-name}}
+              </h3>
               <div>
                 <time>
                   {{formatTime start-time}}
@@ -83,28 +76,6 @@
                   {{formatTime end-time}}
                 </time>
               </div>
-            </li>
-          {{/each}}
-        </ul>
-      </section>
-    {{/if}}
-
-    <section class="container">
-      <h2 class="title">工作经历</h2>
-
-      <ul class="wrapper work">
-        {{#each work-experience}}
-          <li class="work__wrapper">
-            <h3 class="work__title">{{company-name}}</h3>
-
-            <div>
-              <time>
-                {{formatTime start-time}}
-              </time>
-              -
-              <time>
-                {{formatTime end-time}}
-              </time>
             </div>
 
             <div class="work__subtitle">
@@ -128,14 +99,76 @@
         {{/each}}
       </ul>
     </section>
+
+    {{#if education-experience}}
+      <section class="container">
+        <h2 class="title">教育经历</h2>
+
+        <ul class="wrapper education">
+          {{#each education-experience}}
+            <li class="education__wrapper">
+              <div class="info__wrapper">
+                <h3 class="info__title">
+                  {{name}}
+                </h3>
+
+                <div>
+                  <time>
+                    {{formatTime start-time}}
+                  </time>
+                  -
+                  <time>
+                    {{formatTime end-time}}
+                  </time>
+                </div>
+              </div>
+
+              <span class="education__caption">
+                <span>{{major}}</span>
+                <span>{{other}}</span>
+              </span>
+            </li>
+          {{/each}}
+        </ul>
+      </section>
+    {{/if}}
+
+
+    <section class="container">
+      <h2 class="title">专业技能</h2>
+
+      <ul>
+        {{#each professional-skills}}
+          <li class="wrapper">
+            {{.}}
+          </li>
+        {{/each}}
+      </ul>
+    </section>
+
+    <footer class="footer">
+      <span class="updated-at">
+        更新于
+        <time datetime="2022-02-04">
+        {{formatDate updated_at}}
+        </time>
+      </span>
+      <div>
+        <span class="version-choice__pdf-version">
+          查看
+          <a class="version-choice__url" href="/resume.pdf">
+          PDF版本
+          </a>
+        </span>
+
+        <span class="version-choice__web-version">
+          查看
+          <a class="version-choice__url" href="https://resume.xuerzong.com">
+          WEB版本
+          </a>
+        </span>
+      </div>
+    </footer>
   </main>
-
-  {{#if pdf}}
-  <a target="_blank" href="{{pdf.url}}" class="pdf">
-    <span class="pdf-icon">{{> pdfIcon}}</span>
-    {{pdf.label}}
-  </a>
-  {{/if}}
 </body>
-
 </html>
