@@ -79,10 +79,10 @@
             </div>
 
             <div class="work__subtitle">
-              <span>{{position}}</span>                  
+              <span>{{position}}</span>
               <span>{{club}}</span>
             </div>
-  
+
             {{#if summary}}
               <p class="work__summary">
                 {{summary}}
@@ -100,8 +100,7 @@
       </ul>
     </section>
 
-    {{#if education-experience}}
-      <section class="container">
+    <section class="container">
         <h2 class="title">教育经历</h2>
 
         <ul class="wrapper education">
@@ -130,9 +129,31 @@
             </li>
           {{/each}}
         </ul>
-      </section>
-    {{/if}}
+    </section>
 
+    <section class="container">
+      <h2 class="title">项目经历</h2>
+      <ul>
+        {{#each project-experiences}}
+          <li class="wrapper">
+            <h3 class="info__title">
+              <a
+                href="{{link}}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="info__link"
+              >
+                {{name}}
+              </a>
+            </h3>
+
+            <div class="info__subtitle">
+              {{description}}
+            </div>
+          </li>
+        {{/each}}
+      </ul>
+    </section>
 
     <section class="container">
       <h2 class="title">专业技能</h2>

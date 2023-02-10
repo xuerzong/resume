@@ -39,8 +39,11 @@ const buildHtml = () => {
     return moment(time).format('YYYY.MM.DD')
   })
   registerIcons(Handlebars)
-  
-  const html = Handlebars.compile(template)({ ...resumeConfig, css })
+
+  const html = Handlebars.compile(template, { noEscape: true })({
+    ...resumeConfig,
+    css
+  })
 
   fs.writeFileSync(path.resolve(outputDir, 'index.html'), html, 'utf-8')
 

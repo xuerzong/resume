@@ -37,6 +37,12 @@ work-experience:
       - 参与低代码平台开发（Ant Design + React.js + Typescript）
       - 参与影视活动H5页面开发（Vue2 + Vanilla）
 
+project-experiences:
+  - name: 个人网站
+    link: https://xuerzong.com
+    description: 使用(Next.js + Tailwindcss + MDX)搭建的网站
+
+
 professional-skills:
   - 前端：Typescript、Javascript、React、Next、Vue
   - 构建：Webpack、Gulp、Rollup、Vite
