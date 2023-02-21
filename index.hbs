@@ -17,14 +17,14 @@
 <body>
   <main id="resume">
     <section class="base container">
-      <h1 class="base__name">
+      <h1 class="name">
         {{base.name}}
       </h1>
 
-      <ul class="base__social">
+      <ul class="social">
         {{#if base.phone}}
-        <li title="{{base.phone}}" class="base__social-wrapper">
-          <span class="base__social-icon icon">
+        <li title="{{base.phone}}" class="social-wrapper">
+          <span class="social-icon icon">
             {{> phoneIcon}}
           </span>
           <span>{{base.phone}}</span>
@@ -32,39 +32,48 @@
         {{/if}}
 
         {{#if base.email}}
-        <li title="{{base.email}}" class="base__social-wrapper">
-          <span class="base__social-icon icon">
+        <li title="{{base.email}}" class="social-wrapper">
+          <span class="social-icon icon">
             {{> mailIcon}}
           </span>
           <a href="mailto:{{base.email}}">{{base.email}}</a>
         </li>
         {{/if}}
 
+        {{#if base.github}}
+        <li title="{{base.github}}" class="social-wrapper">
+          <span class="social-icon icon">
+            {{> githubIcon}}
+          </span>
+          <a href="https://github.com/{{base.github}}" target="_blank" rel="noreferrer noopener">{{base.github}}</a>
+        </li>
+        {{/if}}
+
         {{#if base.website}}
-        <li title="{{base.website}}" class="base__social-wrapper">
-          <span class="base__social-icon icon">
+        <li title="https://{{base.website}}" class="social-wrapper">
+          <span class="social-icon icon">
             {{> websiteIcon}}
           </span>
-          <a href="{{base.website}}" target="_blank">{{base.website}}</a>
+          <a href="https://{{base.website}}" target="_blank" rel="noreferrer noopener">{{base.website}}</a>
         </li>
         {{/if}}
       </ul>
     </section>
 
     <section class="container">
-      <h2 class="title">自我介绍</h2>
+      <h2 class="section-title">自我介绍</h2>
 
       <p>{{introduction}}</p>
     </section>
 
     <section class="container">
-      <h2 class="title">工作经历</h2>
+      <h2 class="section-title">工作经历</h2>
 
-      <ul class="wrapper work">
+      <ul>
         {{#each work-experience}}
-          <li class="work__wrapper">
-            <div class="info__wrapper">
-              <h3 class="info__title">
+          <li class="wrapper">
+            <div class="wrapper-with-time">
+              <h3 class="title">
                 {{company-name}}
               </h3>
               <div>
@@ -78,20 +87,20 @@
               </div>
             </div>
 
-            <div class="work__subtitle">
+            <div class="caption">
               <span>{{position}}</span>
               <span>{{club}}</span>
             </div>
 
             {{#if summary}}
-              <p class="work__summary">
+              <p class="summary">
                 {{summary}}
               </p>
             {{/if}}
             {{#if highlights}}
-              <ul class="work__highlights">
+              <ul class="highlights">
                 {{#each highlights}}
-                  <li title="{{.}}" > {{.}} </li>
+                  <li title="{{.}}" class="highlights__wrapper"> {{.}} </li>
                 {{/each}}
               </ul>
             {{/if}}
@@ -101,13 +110,13 @@
     </section>
 
     <section class="container">
-        <h2 class="title">教育经历</h2>
+        <h2 class="section-title">教育经历</h2>
 
-        <ul class="wrapper education">
+        <ul>
           {{#each education-experience}}
-            <li class="education__wrapper">
-              <div class="info__wrapper">
-                <h3 class="info__title">
+            <li class="wrapper">
+              <div class="wrapper-with-time">
+                <h3 class="title">
                   {{name}}
                 </h3>
 
@@ -122,7 +131,7 @@
                 </div>
               </div>
 
-              <span class="education__caption">
+              <span class="caption">
                 <span>{{major}}</span>
                 <span>{{other}}</span>
               </span>
@@ -132,31 +141,41 @@
     </section>
 
     <section class="container">
-      <h2 class="title">项目经历</h2>
+      <h2 class="section-title">项目经历</h2>
       <ul>
         {{#each project-experiences}}
           <li class="wrapper">
-            <h3 class="info__title">
-              <a
-                href="{{link}}"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="info__link"
-              >
+            <h3 class="title">
+              {{#if link}}
+                <a
+                  href="{{link}}"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="link"
+                >
+                  {{name}}
+                </a>
+              {{else}}
                 {{name}}
-              </a>
+              {{/if}}
             </h3>
 
-            <div class="info__subtitle">
+            <div class="caption">
               {{description}}
             </div>
+
+            {{#if stack}}
+              <div class="stack">
+                {{stack}}
+              </div>
+            {{/if}}
           </li>
         {{/each}}
       </ul>
     </section>
 
     <section class="container">
-      <h2 class="title">专业技能</h2>
+      <h2 class="section-title">专业技能</h2>
 
       <ul>
         {{#each professional-skills}}
@@ -170,8 +189,8 @@
     <footer class="footer">
       <span class="updated-at">
         更新于
-        <time datetime="2022-02-04">
-        {{formatDate updated_at}}
+        <time datetime="{{formatDate updated-at}}">
+        {{formatDate updated-at}}
         </time>
       </span>
       <div>

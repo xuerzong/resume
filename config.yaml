@@ -3,7 +3,7 @@ base:
   email: xuerzong@gmail.com
   phone: 18500950299
   github: xuerzong
-  website: https://xuerzong.com
+  website: xuerzong.com
 
 introduction: 我是一名计算机专业本科毕业生、前端工程师，热衷于用代码构建创意，用应用丰富生活。
 
@@ -22,10 +22,10 @@ work-experience:
     club: 国际广告产品部
     position: 高级前端开发工程师
     location: 北京
-    summary: 负责有道广告全球数字营销Saas平台（https://youdaoads.com）开发、维护及周边建设；
+    summary: 负责有道广告全球数字营销Saas平台开发、维护及周边建设；担任Code reviewer、2022校招面试官等角色。
     highlights:
-      - YoudaoAds官网（Next.js + Typescript + Scss）
-      - YoudaoAds全球数字营销Saas平台（Next.js + Typescript + Ant Design + Less）
+      - YoudaoAds全球数字营销Saas平台（https://youdaoads.com）
+      - PassionArk官网（https://passionark.youdao.com）
 
   - company-name: 北京爱奇艺科技有限公司
     start-time: 2020-11-11
@@ -34,18 +34,29 @@ work-experience:
     position: H5前端实习生
     location: 北京
     highlights:
-      - 参与低代码平台开发（Ant Design + React.js + Typescript）
-      - 参与影视活动H5页面开发（Vue2 + Vanilla）
+      - 参与低代码平台开发
+      - 参与影视活动H5页面开发
 
 project-experiences:
   - name: 个人网站
     link: https://xuerzong.com
-    description: 使用(Next.js + Tailwindcss + MDX)搭建的网站
+    description: 个人博客网站。其中技术栈应用于<strong>Youdaoads新闻</strong>、<strong>热力方舟官网案例</strong>页面。
+    stack: Next.js + Tailwindcss + MDX
+  
+  - name: 多账号管理Chrome插件
+    description: 适用开发过程中的多角色切换场景，增加开发效率。
+    stack: React.js + Tailwindcss + Vite 
+
+  - name: 短链应用
+    description: 创建短链并统计短链的PV、UV。 
+    stack: Next.js + Material UI + prisma + MySQL + trpc
+
+  - name: 简历应用
+    description: 动态创建简历应用，可参考(https://www.wondercv.com/)。 
+    stack: Next.js + Ant Design + Next Auth + prisma + MySQL
 
 
 professional-skills:
   - 前端：Typescript、Javascript、React、Next、Vue
-  - 构建：Webpack、Gulp、Rollup、Vite
+  - 构建：Webpack、Gulp、Rollup、Vite、Esbuild
   - 后端：Nodejs、Python、Mysql、MongoDB、Prisma、Typeorm
-
-updated_at: 2023-02-10

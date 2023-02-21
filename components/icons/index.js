@@ -5,7 +5,8 @@ const icons = [
   'mail',
   'phone',
   'website',
-  'pdf'
+  'pdf',
+  'github'
 ]
 
 /**

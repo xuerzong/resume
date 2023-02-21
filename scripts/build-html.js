@@ -40,8 +40,11 @@ const buildHtml = () => {
   })
   registerIcons(Handlebars)
 
+  const now = new Date()
+
   const html = Handlebars.compile(template, { noEscape: true })({
     ...resumeConfig,
+    'updated-at': now,
     css
   })
 
