@@ -63,8 +63,45 @@
     <section class="container">
       <h2 class="section-title">自我介绍</h2>
 
-      <p>{{introduction}}</p>
+      <p class="summary">{{introduction.summary}}</p>
+
+      <ul>
+        {{#each introduction.highlights}}
+          <li class="wrapper">{{.}}</li>
+        {{/each}}
+      </ul>
     </section>
+
+    <section class="container">
+      <h2 class="section-title">教育经历</h2>
+
+      <ul>
+        {{#each education-experience}}
+          <li class="wrapper">
+            <div class="wrapper-with-time">
+              <h3 class="title">
+                {{name}}
+              </h3>
+
+              <div>
+                <time>
+                  {{formatTime start-time}}
+                </time>
+                -
+                <time>
+                  {{formatTime end-time}}
+                </time>
+              </div>
+            </div>
+
+            <span class="caption">
+              <span>{{major}}</span>
+              <span>{{other}}</span>
+            </span>
+          </li>
+        {{/each}}
+      </ul>
+    </section>    
 
     <section class="container">
       <h2 class="section-title">工作经历</h2>
@@ -97,47 +134,36 @@
                 {{summary}}
               </p>
             {{/if}}
-            {{#if highlights}}
+            {{#if projects}}
               <ul class="highlights">
-                {{#each highlights}}
-                  <li title="{{.}}" class="highlights__wrapper"> {{.}} </li>
+                {{#each projects}}
+                  <li class="highlights__wrapper">
+                    {{#if link}}
+                      <a
+                        href="{{link}}"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="link"
+                      >
+                        <strong>{{name}}</strong>
+                      </a>
+                    {{else}}
+                      {{name}}
+                    {{/if}}
+                    <ul class="mt2">
+                      {{#if highlights}}
+                        {{#each highlights}}
+                          <li class="wrapper">{{.}}</li>
+                        {{/each}}
+                      {{/if}}
+                    </ul>
+                  </li>
                 {{/each}}
               </ul>
             {{/if}}
           </li>
         {{/each}}
       </ul>
-    </section>
-
-    <section class="container">
-        <h2 class="section-title">教育经历</h2>
-
-        <ul>
-          {{#each education-experience}}
-            <li class="wrapper">
-              <div class="wrapper-with-time">
-                <h3 class="title">
-                  {{name}}
-                </h3>
-
-                <div>
-                  <time>
-                    {{formatTime start-time}}
-                  </time>
-                  -
-                  <time>
-                    {{formatTime end-time}}
-                  </time>
-                </div>
-              </div>
-
-              <span class="caption">
-                <span>{{major}}</span>
-                <span>{{other}}</span>
-              </span>
-            </li>
-          {{/each}}
-        </ul>
     </section>
 
     <section class="container">

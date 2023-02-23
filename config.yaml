@@ -3,9 +3,14 @@ base:
   email: xuerzong@gmail.com
   phone: 18500950299
   github: xuerzong
-  website: xuerzong.com
 
-introduction: 我是一名计算机专业本科毕业生、前端工程师，热衷于用代码构建创意，用应用丰富生活。
+introduction: 
+  summary: 我是一名计算机专业本科毕业生、前端工程师。我：
+  highlights:
+    - 具有很强的学习能力和独立思考能力
+    - 善于通过Github、Youtube等平台探索前沿技术，并将其运用于实践中
+    - 热衷于用代码构建创意，用应用丰富生活
+
 
 education-experience:
   - name: 北京交通大学
@@ -23,9 +28,23 @@ work-experience:
     position: 高级前端开发工程师
     location: 北京
     summary: 负责有道广告全球数字营销Saas平台开发、维护及周边建设；担任Code reviewer、2022校招面试官等角色。
-    highlights:
-      - YoudaoAds全球数字营销Saas平台（https://youdaoads.com）
-      - PassionArk官网（https://passionark.youdao.com）
+    projects:
+      - name: YoudaoAds全球数字营销Saas平台
+        link: https://youdaoads.com
+        highlights:
+          - 使用 Next.js + Antd + Less + Redux技术栈
+          - 主导项目架构设计以及基础建设
+          - i18n双语切换
+          - 20+种角色权限管理
+          - 包含订单流程、支付提现流程等
+          - 将官网首屏全球范围加载时间控制在4s内
+          - 将项目中的Next.js升级了3个major版本，并升级了相关Webpack配置，使首屏资源加载大小减小了52%
+      - name: PassionArk官网
+        link: https://passionark.youdao.com
+        highlights:
+          - 使用 Next.js + Tailwindcss技术栈
+          - 编写创作者们、关于我们、联系我们等页面
+          - 解决了页面动画卡顿和低版本Safari兼容问题
 
   - company-name: 北京爱奇艺科技有限公司
     start-time: 2020-11-11
@@ -33,27 +52,24 @@ work-experience:
     club: 基线研发部
     position: H5前端实习生
     location: 北京
-    highlights:
-      - 参与低代码平台开发
-      - 参与影视活动H5页面开发
+    projects:
+      - name: 参与低代码平台开发
+      - name: 参与影视活动H5页面开发
 
 project-experiences:
   - name: 个人网站
     link: https://xuerzong.com
-    description: 个人博客网站。其中技术栈应用于<strong>Youdaoads新闻</strong>、<strong>热力方舟官网案例</strong>页面。
-    stack: Next.js + Tailwindcss + MDX
+    description: 个人博客网站。其中技术栈应用于<strong>Youdaoads新闻</strong>、<strong>PassionArk官网案例</strong>页面。
   
   - name: 多账号管理Chrome插件
-    description: 适用开发过程中的多角色切换场景，增加开发效率。
-    stack: React.js + Tailwindcss + Vite 
+    link: https://auth-manager.xuerzong.com
+    description: 适用多账号/角色的开发场景，能够快速切换账号/角色，增加开发效率。
 
   - name: 短链应用
     description: 创建短链并统计短链的PV、UV。 
-    stack: Next.js + Material UI + prisma + MySQL + trpc
 
   - name: 简历应用
-    description: 动态创建简历应用，可参考(https://www.wondercv.com/)。 
-    stack: Next.js + Ant Design + Next Auth + prisma + MySQL
+    description: 动态创建简历应用。 
 
 
 professional-skills:

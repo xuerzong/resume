@@ -8,8 +8,9 @@
   "scripts": {
     "dev": "nodemon",
     "start": "node server.js",
-    "build": "yarn build-css && node ./scripts/index.js",
-    "build-css": "gulp css",
+    "build": "yarn build:css && yarn build:image && node ./scripts/index.js",
+    "build:css": "gulp css",
+    "build:image": "gulp images",
     "clean": "rimraf ./node_modules/.cache ./dist ./.resume",
     "prebuild": "yarn clean && echo All clean ✨"
   },
