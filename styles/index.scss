@@ -115,13 +115,14 @@ time {
   font-size: 1rem;
 }
 
-.caption, .summary {
+.caption {
   color: rgba($color: $text-color, $alpha: .85);
   margin: .25em 0;
 }
 
 .summary {
   color: $text-color;
+  margin: 0 0 .5em 0;
 }
 
 .link {
@@ -187,4 +188,9 @@ footer.footer {
 .updated-at {
   display: inline-block;
   margin-right: 1em;
+}
+
+
+.mt2 {
+  margin-top: .5rem;
 }
