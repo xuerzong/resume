@@ -4,7 +4,7 @@ base:
   phone: 18500950299
   github: xuerzong
 
-introduction: 
+introduction:
   summary: 我是一名计算机专业本科毕业生、前端工程师。我：
   highlights:
     - 具有很强的学习能力和独立思考能力
@@ -60,16 +60,16 @@ project-experiences:
   - name: 个人网站
     link: https://xuerzong.com
     description: 个人博客网站。其中技术栈应用于<strong>Youdaoads新闻</strong>、<strong>PassionArk官网案例</strong>页面。
-  
+
   - name: 多账号管理Chrome插件
-    link: https://auth-manager.xuerzong.com
+    link: https://github.com/xuerzong/auth-manager
     description: 适用多账号/角色的开发场景，能够快速切换账号/角色，增加开发效率。
 
   - name: 短链应用
-    description: 创建短链并统计短链的PV、UV。 
+    description: 创建短链并统计短链的PV、UV。
 
   - name: 简历应用
-    description: 动态创建简历应用。 
+    description: 动态创建简历应用。
 
 
 professional-skills:
