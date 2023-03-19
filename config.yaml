@@ -65,12 +65,6 @@ project-experiences:
     link: https://github.com/xuerzong/auth-manager
     description: 适用多账号/角色的开发场景，能够快速切换账号/角色，增加开发效率。
 
-  - name: 短链应用
-    description: 创建短链并统计短链的PV、UV。
-
-  - name: 简历应用
-    description: 动态创建简历应用。
-
 
 professional-skills:
   - 前端：Typescript、Javascript、React、Next、Vue
