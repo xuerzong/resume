@@ -32,7 +32,7 @@ work-experience:
       - name: YoudaoAds全球数字营销Saas平台
         link: https://youdaoads.com
         highlights:
-          - 使用 Next.js + Antd + Less + Redux技术栈
+          - 使用 Next.js(React) + Antd + Less + Redux技术栈
           - 主导项目架构设计以及基础建设
           - i18n双语切换
           - 20+种角色权限管理
@@ -42,7 +42,7 @@ work-experience:
       - name: PassionArk官网
         link: https://passionark.youdao.com
         highlights:
-          - 使用 Next.js + Tailwindcss技术栈
+          - 使用 Next.js(React) + Tailwindcss技术栈
           - 编写创作者们、关于我们、联系我们等页面
           - 解决了页面动画卡顿和低版本Safari兼容问题
 
