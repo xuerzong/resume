@@ -64,7 +64,10 @@ project-experiences:
   - name: 多账号管理Chrome插件
     link: https://github.com/xuerzong/auth-manager
     description: 适用多账号/角色的开发场景，能够快速切换账号/角色，增加开发效率。
-
+    
+  - name: ChatGPT国内镜像
+  - link: https://ninepie.chat
+  - description: 使用 Next.js + TailwindCSS + HeadlessUI + Prisma + Mysql 技术栈搭建。
 
 professional-skills:
   - 前端：Typescript、Javascript、React、Next、Vue
