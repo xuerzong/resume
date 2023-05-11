@@ -36,8 +36,7 @@ work-experience:
           - 主导项目架构设计以及基础建设
           - i18n双语切换
           - 20+种角色权限管理
-          - 包含订单流程、支付提现流程等
-          - 将官网首屏全球范围加载时间控制在4s内
+          - 将官网首屏全球范围平均加载时间控制在<strong>4s</strong>内，业务主要开展地区平均加载时间控制在<strong>1.8s</strong>内
           - 将项目中的Next.js升级了3个major版本，并升级了相关Webpack配置，使首屏资源加载大小减小了52%
       - name: PassionArk官网
         link: https://passionark.youdao.com
