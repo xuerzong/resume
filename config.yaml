@@ -21,6 +21,18 @@ education-experience:
     end-time: 2021-06-30
 
 work-experience:
+  - company-name: 北京希望在线线上学科培训学校
+    start-time: 2023-07-06
+    # end-time: 至今
+    club: 产品研发部 - 增长前端组
+    position: 前端开发工程师
+    location: 北京
+    # summary: 负责《希望学口算》小程序开发
+    projects: 
+      - name: 希望学口算小程序
+        highlights:
+        # - 使用 Taro(React) + Less技术栈
+
   - company-name: 网易有道信息技术(北京)有限公司
     start-time: 2021-04-06
     end-time: 2023-07-05
@@ -37,13 +49,11 @@ work-experience:
           - i18n双语切换
           - 20+种角色权限管理
           - 将官网首屏全球范围平均加载时间控制在<strong>4s</strong>内，业务主要开展地区平均加载时间控制在<strong>1.8s</strong>内
-          - 将项目中的Next.js升级了3个major版本，并升级了相关Webpack配置，使首屏资源加载大小减小了52%
       - name: PassionArk官网
         link: https://passionark.youdao.com
         highlights:
           - 使用 Next.js(React) + Tailwindcss技术栈
           - 编写创作者们、关于我们、联系我们等页面
-          - 解决了页面动画卡顿和低版本Safari兼容问题
 
   - company-name: 北京爱奇艺科技有限公司
     start-time: 2020-11-11
