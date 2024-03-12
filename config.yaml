@@ -29,9 +29,10 @@ work-experience:
     location: 北京
     # summary: 负责《希望学口算》小程序开发
     projects: 
-      - name: 希望学口算小程序
+      - name: 希望学口算（微信小程序）
         highlights:
         # - 使用 Taro(React) + Less技术栈
+      - name: 成长体系（H5）
 
   - company-name: 网易有道信息技术(北京)有限公司
     start-time: 2021-04-06
