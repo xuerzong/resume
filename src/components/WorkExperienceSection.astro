@@ -1,0 +1,55 @@
+---
+import SectionBlock from "./SectionBlock.astro";
+import type { ResumeData } from "../data/resume";
+import { formatYearMonth } from "../lib/format";
+
+interface Props {
+  workExperience: ResumeData["workExperience"];
+}
+
+const { workExperience } = Astro.props;
+---
+
+<SectionBlock title="工作经历">
+  <ul class="my-2 space-y-3">
+    {
+      workExperience.map((item) => (
+        <li class="ml-4 list-disc pl-1 marker-primary">
+          <div class="mb-1 flex flex-wrap items-center gap-2">
+            <h3 class="text-base font-semibold">{item["company-name"]}</h3>
+
+            {item.position && <span class="font-medium">{item.position}</span>}
+            {item.club && <span class="font-normal">{` ${item.club}`}</span>}
+            <div class="ml-auto whitespace-nowrap">
+              <time>{formatYearMonth(item["start-time"])}</time>
+              {" - "}
+              <time>{formatYearMonth(item["end-time"])}</time>
+            </div>
+          </div>
+
+          {item.summary && <p class="mb-2">{item.summary}</p>}
+
+          {item.projects && (
+            <ul class="ml-6 list-[circle] space-y-1">
+              {item.projects.map((project) => (
+                <li>
+                  <div class="font-medium">{project.name}</div>
+
+                  {project.highlights && project.highlights.length > 0 && (
+                    <ul class="mt-2">
+                      {project.highlights.map((highlight) => (
+                        <li class="mb-2 ml-4 list-disc pl-1 marker-primary">
+                          {highlight}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</SectionBlock>

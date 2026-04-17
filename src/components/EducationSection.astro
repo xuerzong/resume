@@ -1,0 +1,37 @@
+---
+import SectionBlock from "./SectionBlock.astro";
+import type { ResumeData } from "../data/resume";
+import { formatYearMonth } from "../lib/format";
+
+interface Props {
+  educationExperience: ResumeData["educationExperience"];
+}
+
+const { educationExperience } = Astro.props;
+---
+
+<SectionBlock title="教育经历">
+  <ul class="my-2 space-y-2">
+    {
+      educationExperience.map((item) => (
+        <li class="ml-4 list-disc pl-1 marker-primary">
+          <div class="mb-1 flex flex-wrap items-center gap-x-4 gap-y-1">
+            <h3 class="text-base font-semibold">{item.name}</h3>
+            <div class="ml-auto whitespace-nowrap">
+              <time>{formatYearMonth(item["start-time"])}</time>
+              {" - "}
+              <time>{formatYearMonth(item["end-time"])}</time>
+            </div>
+          </div>
+
+          <span class="font-medium">
+            <span>{item.school}</span>
+            <span> </span>
+            <span>{item.major}</span>
+            {item.other && <span>{` ${item.other}`}</span>}
+          </span>
+        </li>
+      ))
+    }
+  </ul>
+</SectionBlock>

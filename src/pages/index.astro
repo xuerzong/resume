@@ -1,0 +1,50 @@
+---
+import "../styles/global.css";
+import HeaderSection from "../components/HeaderSection.astro";
+import IntroductionSection from "../components/IntroductionSection.astro";
+import EducationSection from "../components/EducationSection.astro";
+import WorkExperienceSection from "../components/WorkExperienceSection.astro";
+import ProjectExperienceSection from "../components/ProjectExperienceSection.astro";
+import ProfessionalSkillsSection from "../components/ProfessionalSkillsSection.astro";
+import { loadResumeData } from "../data/resume";
+
+const resume = loadResumeData();
+---
+
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@100..900&family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <title>Resume | xuerzong</title>
+    <meta name="description" content={`${resume.base.name}的简历`} />
+  </head>
+  <body
+    class="bg-background text-foreground antialiased selection:bg-primary-soft selection:text-foreground print:bg-white print:text-foreground"
+  >
+    <main
+      class="mx-auto max-w-4xl print:max-w-[unset] print:my-0 print:w-full print:bg-white print:px-0 print:py-0 print:shadow-none print:ring-0"
+    >
+      <div class="flex gap-6">
+        <div class="min-h-screen h-full flex-1 space-y-3 p-4">
+          <HeaderSection base={resume.base} />
+          <IntroductionSection introduction={resume.introduction} />
+          <EducationSection educationExperience={resume.educationExperience} />
+          <WorkExperienceSection workExperience={resume.workExperience} />
+          <ProjectExperienceSection
+            projectExperiences={resume.projectExperiences}
+          />
+          <ProfessionalSkillsSection
+            professionalSkills={resume.professionalSkills}
+          />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

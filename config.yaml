@@ -1,16 +1,18 @@
 base:
   name: 徐聪
+  birth: 1999-09-09
   email: xuerzong@gmail.com
   phone: 18500950299
   github: xuerzong
+  website: https://xuco.me
 
 introduction:
-  summary: 我是一名计算机专业本科毕业生、前端工程师。我：
+  summary: 5 年以上前端开发经验，主导过教育增长业务与全球营销 SaaS 平台的核心模块建设，具备复杂业务从 0 到 1 落地与持续迭代能力。
   highlights:
-    - 具有很强的学习能力和独立思考能力
-    - 善于通过Github、Youtube等平台探索前沿技术，并将其运用于实践中
-    - 热衷于用代码构建创意，用应用丰富生活
-
+    - 擅长中后台系统、增长业务、H5 / 小程序、AI 交互场景开发
+    - 熟练使用 React/Next.js/Taro/Vue/Astro 等现代化栈，具备工程化与架构意识
+    - 有独立开发 CLI、桌面端、AI 代理工具等全栈项目经验
+    - 具备良好的业务理解与跨团队协作能力，可独立负责模块与方案设计
 
 education-experience:
   - name: 北京交通大学
@@ -21,42 +23,47 @@ education-experience:
     end-time: 2021-06-30
 
 work-experience:
-  - company-name: 北京希望在线线上学科培训学校
-    start-time: 2023-07-06
-    # end-time: 至今
-    club: 产品研发部 - 增长前端组
-    position: 前端开发工程师
+  - company-name: 希望学
+    start-time: 2023-07
+    end-time: 2026-04
+    club: 增长前端组/学生研发前端组
+    position: 高级前端开发工程师
     location: 北京
-    # summary: 负责《希望学口算》小程序开发
-    projects: 
-      - name: 希望学口算（微信小程序）
+    summary: 负责 希望学APP 成长中心从0到1的开发以及功能迭代，搭建完整成长体系、任务体系、激励体系，支撑用户活跃度与留存提升。参与 AI 智能体、口算小程序等核心模块开发，具备完整前端业务落地能力。
+    projects:
+      - name: 成长中心
         highlights:
-        # - 使用 Taro(React) + Less技术栈
-      - name: 成长体系（H5）
-
-  - company-name: 网易有道信息技术(北京)有限公司
+          - 技术栈： React + Antd Mobile + TypeScript + Lottie
+          - 负责成长中心、战令中心、任务挑战赛全流程开发，实现任务展示、成长等级升级、奖励领取与发放等核心逻辑
+          - 使用 Echarts/Recharts/Canvas 实现学生任务完成数据可视化，支持月度、年度统计报告展示
+      - name: AI 智能体
+        highlights:
+          - 技术栈： React + Antd Mobile + TypeScript
+          - 负责 希望学APP 内 AI 助手对话功能开发
+          - 封装通用 ASR 语音识别、TTS 语音播报、AI 流式响应 组件，实现低延迟、高复用的语音交互能力
+      - name: 希望学口算
+        highlights:
+          - 技术栈： Taro + React + TypeScript
+          - 负责希望学口算小程序/H5的开发和维护，包含口算练习、英语单词练习等核心功能
+  - company-name: 网易有道
     start-time: 2021-04-06
     end-time: 2023-07-05
     club: 国际广告产品部
     position: 高级前端开发工程师
     location: 北京
-    summary: 负责有道广告全球数字营销Saas平台开发、维护及周边建设；担任Code reviewer、2022校招面试官等角色。
+    summary: 负责有道广告全球数字营销SaaS平台从0到1开发和维护，包含KOL数据分析面板、KOL任务订单管理、多角色管理、全球支付管理。
     projects:
-      - name: YoudaoAds全球数字营销Saas平台
-        link: https://youdaoads.com
+      - name: YoudaoAds全球数字营销SaaS平台
         highlights:
-          - 使用 Next.js(React) + Antd + Less + Redux技术栈
-          - 主导项目架构设计以及基础建设
-          - i18n双语切换
-          - 20+种角色权限管理
-          - 将官网首屏全球范围平均加载时间控制在<strong>4s</strong>内，业务主要开展地区平均加载时间控制在<strong>1.8s</strong>内
+          - 技术栈：Next.js + Antd + TypeScript
+          - 订单管理：从触达KOL、订单创建、订单执行到订单结算的全流程管理
+          - 多角色管理：支持广告主、MCN、KOL、运营人员等多角色的权限控制和功能定制
+          - 全球支付管理：集成 Airwallex(Paypal/SWIFT/Bank) 支付方式，支持全球范围内的支付和结算
       - name: PassionArk官网
-        link: https://passionark.youdao.com
         highlights:
-          - 使用 Next.js(React) + Tailwindcss技术栈
-          - 编写创作者们、关于我们、联系我们等页面
+          - 技术栈：Next.js + TailwindCSS + TypeScript
 
-  - company-name: 北京爱奇艺科技有限公司
+  - company-name: 爱奇艺
     start-time: 2020-11-11
     end-time: 2021-04-06
     club: 基线研发部
@@ -68,18 +75,25 @@ work-experience:
 
 project-experiences:
   - name: 个人网站
-    link: https://xuerzong.com
-    description: 个人博客网站。其中技术栈应用于<strong>Youdaoads新闻</strong>、<strong>PassionArk官网案例</strong>页面。
+    link: https://xuco.me
+    description: 个人网站。 Next.js + MDX + TailwindCSS 技术栈。
 
-  - name: 多账号管理Chrome插件
-    link: https://github.com/xuerzong/auth-manager
-    description: 适用多账号/角色的开发场景，能够快速切换账号/角色，增加开发效率。
-    
-  - name: ChatGPT国内镜像
-    link: https://ninepie.chat
-    description: 使用 Next.js + TailwindCSS + HeadlessUI + Prisma + Mysql 技术栈搭建。
+  - name: Redis Dash
+    link: https://redis-dash.xuco.me
+    description: Redis 可视化工具。支持 NPM CLI 和 桌面端（使用 React + Tauri 2.0 技术栈开发的 Redis 可视化工具，支持 Windows、MacOS 和 Linux 平台）。
+
+  - name: OpenProxy
+    link: https://openproxy.sh
+    description: OpenProxy 是一个 AI 代理工具，支持多种 AI 模型的接入和管理，提供便捷的 API 调用和管理界面。
+
+  - name: Stropress
+    link: https://stropress.xuco.me
+    description: 使用 Astro 技术栈开发的静态生成的文档网站。
 
 professional-skills:
-  - 前端：Typescript、Javascript、React、Next、Vue
-  - 构建：Webpack、Gulp、Rollup、Vite、Esbuild
-  - 后端：Nodejs、Python、Mysql、MongoDB、Prisma、Typeorm
+  - 前端：Typescript、Javascript、React、Next、Vue、Astro
+  - 构建：Vite、ESBuild、Webpack、Gulp、Rollup
+  - 后端：Nodejs/Bun、Python、Prisma、Typeorm、Drizzle
+  - 数据库：PostgreSQL、MySQL、MongoDB、Redis
+  - 其他：Git、Docker、Linux、Nginx、Tauri
+  - UI：Figma

@@ -1,0 +1,20 @@
+---
+import SectionBlock from "./SectionBlock.astro";
+import type { ResumeData } from "../data/resume";
+
+interface Props {
+  professionalSkills: ResumeData["professionalSkills"];
+}
+
+const { professionalSkills } = Astro.props;
+---
+
+<SectionBlock title="专业技能">
+  <ul class="my-2">
+    {
+      professionalSkills.map((item) => (
+        <li class="mb-2 ml-4 list-disc pl-1 marker-primary">{item}</li>
+      ))
+    }
+  </ul>
+</SectionBlock>

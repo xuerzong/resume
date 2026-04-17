@@ -1,0 +1,32 @@
+---
+import SectionBlock from "./SectionBlock.astro";
+import type { ResumeData } from "../data/resume";
+
+interface Props {
+  projectExperiences: ResumeData["projectExperiences"];
+}
+
+const { projectExperiences } = Astro.props;
+---
+
+<SectionBlock title="项目经历">
+  <ul class="my-2 space-y-3">
+    {
+      projectExperiences.map((item) => (
+        <li class="ml-4 list-disc pl-1 marker-primary">
+          <h3 class="mb-1 text-base font-semibold">
+            {item.name}
+            <span class="ml-2 text-sm font-normal">{item.link}</span>
+          </h3>
+
+          {item.description && <div>{item.description}</div>}
+          {item.stack && (
+            <div class="mt-2 border-l-4 border-primary-soft bg-primary-muted px-2 py-1">
+              {item.stack}
+            </div>
+          )}
+        </li>
+      ))
+    }
+  </ul>
+</SectionBlock>

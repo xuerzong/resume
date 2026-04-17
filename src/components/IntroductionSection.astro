@@ -1,0 +1,21 @@
+---
+import type { ResumeData } from "../data/resume";
+import SectionBlock from "./SectionBlock.astro";
+
+interface Props {
+  introduction: ResumeData["introduction"];
+}
+
+const { introduction } = Astro.props;
+---
+
+<SectionBlock title="个人简介">
+  <p class="mb-2">{introduction.summary}</p>
+  <ul class="my-2">
+    {
+      introduction.highlights.map((item) => (
+        <li class="mb-2 ml-4 list-disc pl-1 marker-primary">{item}</li>
+      ))
+    }
+  </ul>
+</SectionBlock>

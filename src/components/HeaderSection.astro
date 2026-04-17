@@ -1,0 +1,83 @@
+---
+import Icon from "./Icon.astro";
+import type { ResumeData } from "../data/resume";
+import { formatYearMonth } from "../lib/format";
+
+interface Props {
+  base: ResumeData["base"];
+}
+
+const { base } = Astro.props;
+---
+
+<section class="mb-3 text-center text-sm">
+  <h1 class="mb-4 text-2xl font-bold tracking-[0.08em]">
+    {base.name}
+  </h1>
+
+  <ul class="flex flex-wrap justify-center gap-x-6 gap-y-3 text-[0.95rem]">
+    {
+      base.birth && (
+        <li
+          title={base.birth.toString()}
+          class="inline-flex items-center gap-1.5"
+        >
+          <Icon name="birth" class="size-4 shrink-0" />
+          <span>{formatYearMonth(base.birth)}</span>
+        </li>
+      )
+    }
+
+    {
+      base.phone && (
+        <li title={base.phone} class="inline-flex items-center gap-1.5">
+          <Icon name="phone" class="size-4 shrink-0" />
+          <span>{base.phone}</span>
+        </li>
+      )
+    }
+
+    {
+      base.email && (
+        <li title={base.email} class="inline-flex items-center gap-1.5">
+          <Icon name="mail" class="size-4 shrink-0" />
+          <a href={`mailto:${base.email}`}>{base.email}</a>
+        </li>
+      )
+    }
+
+    {
+      base.github && (
+        <li title={base.github} class="inline-flex items-center gap-1.5">
+          <Icon name="github" class="size-4 shrink-0" />
+          <a
+            href={`https://github.com/${base.github}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {base.github}
+          </a>
+        </li>
+      )
+    }
+
+    {
+      base.website && (
+        <li
+          title={`https://${base.website}`}
+          class="inline-flex items-center gap-1.5"
+        >
+          <Icon name="website" class="size-4 shrink-0" />
+          <a
+            class="transition"
+            href={`https://${base.website}`}
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            {base.website}
+          </a>
+        </li>
+      )
+    }
+  </ul>
+</section>
