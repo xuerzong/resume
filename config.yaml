@@ -7,12 +7,12 @@ base:
   website: https://xuco.me
 
 introduction:
-  summary: 5 年以上前端开发经验，主导过教育增长业务与全球营销 SaaS 平台的核心模块建设，具备复杂业务从 0 到 1 落地与持续迭代能力。
+  summary: 5 年以上前端开发经验，具备复杂业务系统与核心模块的设计、开发和迭代能力。
   highlights:
-    - 擅长中后台系统、增长业务、H5 / 小程序、AI 交互场景开发
-    - 熟练使用 React/Next.js/Taro/Vue/Astro 等现代化栈，具备工程化与架构意识
-    - 有独立开发 CLI、桌面端、AI 代理工具等全栈项目经验
-    - 具备良好的业务理解与跨团队协作能力，可独立负责模块与方案设计
+    - 兼具 toC 增长业务与 toB SaaS 平台开发经验
+    - 具备中后台、H5、小程序与桌面端等多场景应用开发经验
+    - 主导过教育增长业务与全球营销 SaaS 平台等核心模块从 0 到 1 建设与持续迭代
+    - 具备工具类与全栈项目落地经验，涵盖 AI 工具、CLI、桌面端应用与浏览器（Chrome）扩展
 
 education-experience:
   - name: 北京交通大学
@@ -27,7 +27,7 @@ work-experience:
     start-time: 2023-07
     end-time: 2026-04
     club: 增长前端组/学生研发前端组
-    position: 高级前端开发工程师
+    position: 前端开发工程师
     location: 北京
     summary: 负责 希望学APP 成长中心从0到1的开发以及功能迭代，搭建完整成长体系、任务体系、激励体系，支撑用户活跃度与留存提升。参与 AI 智能体、口算小程序等核心模块开发，具备完整前端业务落地能力。
     projects:
@@ -76,19 +76,29 @@ work-experience:
 project-experiences:
   - name: 个人网站
     link: https://xuco.me
-    description: 个人网站。 Next.js + MDX + TailwindCSS 技术栈。
+    highlights:
+      - 技术栈：Next.js、MDX、TailwindCSS
+
 
   - name: Redis Dash
     link: https://redis-dash.xuco.me
-    description: Redis 可视化工具。支持 NPM CLI 和 桌面端（使用 React + Tauri 2.0 技术栈开发的 Redis 可视化工具，支持 Windows、MacOS 和 Linux 平台）。
+    highlights:
+      - Redis 图形化管理。技术栈：React、Tauri 2.0、Rust
+      - 支持 CLI 和桌面端（Windows/macOS/Linux）
 
   - name: OpenProxy
     link: https://openproxy.sh
-    description: OpenProxy 是一个 AI 代理工具，支持多种 AI 模型的接入和管理，提供便捷的 API 调用和管理界面。
+    highlights:
+      - 自部署 AI API 网关，统一 OpenAI/Anthropic 风格接口与多供应商模型调用入口。
+      - api： 提供 AI API中转、多供应商故障切换能力。技术栈：Axum(Rust) + PostgreSQL + Redis
+      - app：支持多端（管理端/租户端）打包，包含API Key 管理、权限控制、流量监控等功能。技术栈：React + Elysia(Bun) + Better Auth + PostgreSQL + Redis
 
-  - name: Stropress
-    link: https://stropress.xuco.me
-    description: 使用 Astro 技术栈开发的静态生成的文档网站。
+  - name: 其他
+    highlights:
+      - '@xuerzong/mdx: React 的 MDX 解析器'
+      - '@xuerzong/meow: 基于 AISDK 的 CLI 版 RAG 工具示例'
+      - 'stropress: 基于 Astro 实现的静态文档生成框架'
+      - '快速登录 Chrome 插件：开发过程中快速切换测试账号'
 
 professional-skills:
   - 前端：Typescript、Javascript、React、Next、Vue、Astro

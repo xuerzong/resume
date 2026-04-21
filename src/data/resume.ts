@@ -40,7 +40,7 @@ type ResumeSource = {
     name: string;
     link?: string;
     description?: string;
-    stack?: string;
+    highlights?: string[];
   }>;
   "professional-skills"?: string[];
 };
@@ -89,7 +89,7 @@ type ProjectExperience = {
   name: string;
   link?: string;
   description?: string;
-  stack?: string;
+  highlights?: string[];
 };
 
 export type ResumeData = {
